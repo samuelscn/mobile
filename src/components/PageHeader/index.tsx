@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { View, Text, ImageBackground, Image, TouchableOpacity } from 'react-native';
-import { BorderlessButton } from 'react-native-gesture-handler';
 
 import Arrow from '../../assets/icons/seta-esquerda.png';
 import Favicon from '../../assets/icons/favicon.png';
@@ -11,10 +10,12 @@ import { useNavigation } from '@react-navigation/native';
 import Filter from '../Filter';
 
 interface PageHeaderProps {
-    title: string,
+    title: string;
+    headerRight?: ReactNode;
+    description?: string;
 }
 
-const PageHeader: React.FC<PageHeaderProps> = ({ title }) => {
+const PageHeader: React.FC<PageHeaderProps> = ({ title, headerRight, description, children }) => {
     const { navigate } = useNavigation();
 
     function handleGoBack() {
@@ -33,9 +34,13 @@ const PageHeader: React.FC<PageHeaderProps> = ({ title }) => {
                         <Text style={styles.logo}>VAMOW</Text>
                     </View>
                 </View>
-                <Text style={styles.title}>{title}</Text>
+                <View style={styles.header}>
+                    <Text style={styles.title}>{title}</Text>
+                    {headerRight}
+                </View>
+                { description && <Text style={styles.description}> { description } </Text> }
+                {children}
             </ImageBackground>
-            
         </View>
     )
 }

@@ -1,44 +1,31 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
-    container: {
-        display: 'flex',
-    },
-
     backImage: {
-        width: '100%',
-        height: 160,
-        resizeMode: 'cover',
+        padding: 40,
     },
 
     topBar: {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        marginBottom: 20
-    },
-
-    buttonArrow: {
-        width: '40%',
-        marginLeft: 20
     },
 
     iconArrow: {
-        width: '20%',
-        height: '70%'
+        width: 30,
+        height: 30
     },
-
+    
     logoContainer: {
-        width: '30%',
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-evenly',
-        marginRight: 10
     },
 
     iconFavicon: {
-        width: '30%',
-        height: 30
+        width: 30,
+        height: 30,
+        marginRight: 5
     },
 
     logo: {
@@ -47,12 +34,22 @@ const styles = StyleSheet.create({
     },
 
     title: {
-        marginTop: -40,
-        marginLeft: 30,
         color: '#FFF',
         fontFamily: 'Archivo_400Regular',
         maxWidth: 160,
-        marginVertical: 40
+    },
+
+    header: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginVertical: 20
+    },
+
+    description: {
+        color: '#FFF',
+        fontFamily: 'Poppins_400Regular',
+        fontSize: 10,
+        maxWidth: 180,
     },
 
 });

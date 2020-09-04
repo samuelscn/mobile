@@ -4,8 +4,15 @@ import { View, Text, ImageBackground, TouchableOpacity, Image, TextInput } from 
 import landingImg from '../../assets/images/teste.png';
 
 import styles from './styles';
+import { useNavigation } from '@react-navigation/native';
 
 function Login() {
+    const { navigate } = useNavigation();
+
+    function handleNavigateToRegister() {
+        navigate('Register');
+    }
+
     return (
         <View style={styles.loginComponent} >
             <ImageBackground source={landingImg} style={styles.backImage}>
@@ -27,7 +34,7 @@ function Login() {
                         </TouchableOpacity> 
                         <View style={styles.buttonRegister}>
                             <Text style={styles.textNoHave}>Não tem uma conta?</Text>
-                            <TouchableOpacity>
+                            <TouchableOpacity onPress={handleNavigateToRegister}>
                                 <Text style={styles.textRegister}>Registre-se</Text>
                             </TouchableOpacity> 
                         </View>

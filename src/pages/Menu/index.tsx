@@ -17,6 +17,10 @@ function Menu() {
         navigate('Study');
     }
 
+    function handleNavigateToNewEvento() {
+        navigate('NewEvent');
+    }
+
     return (
         <View style={styles.menuComponent} >
             <ImageBackground source={landingImg} style={styles.backImage}>
@@ -43,7 +47,7 @@ function Menu() {
                         <Image style={styles.iconButton} source={Search} alt="Lupa"/>
                         <Text style={styles.textButtonContainer}>Buscar evento</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={[styles.button, styles.criar]}>
+                    <TouchableOpacity onPress={handleNavigateToNewEvento} style={[styles.button, styles.criar]}>
                         <Image style={styles.iconButton} source={Pen} alt="Caneta"/>
                         <Text style={styles.textButtonContainer}>Criar evento</Text>
                     </TouchableOpacity>  

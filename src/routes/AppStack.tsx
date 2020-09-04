@@ -7,6 +7,8 @@ import Menu from '../pages/Menu';
 import Login from '../pages/Login';
 import SearchEvent from '../pages/SearchEvent';
 import StudyTabs from './StudyTabs';
+import Register from '../pages/Register';
+import NewEvent from '../pages/NewEvent';
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -19,6 +21,8 @@ function AppStack() {
                 <Screen name="Login" component={Login}/>
                 <Screen name="SearchEvent" component={SearchEvent}/>
                 <Screen name="Study" component={StudyTabs}/>
+                <Screen name="Register" component={Register}/>
+                <Screen name="NewEvent" component={NewEvent}/>
             </Navigator>
         </NavigationContainer>
     );
